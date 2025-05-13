@@ -5,26 +5,29 @@
 ### Interfaces & Types both are used for decleare data structure or object type. But there are most important difference between them. such as
 
 ### Declaration:
-    **Interface:** interface is decleared by using keyword "interface". Its mainly used for decleare object type.
-    ```
-        interface User {
-            name: string;
-            age: number;
-        }
+**Interface:** interface is decleared by using keyword "interface". Its mainly used for decleare object type.
 
-    ```
-    **Type:** type is decleared by using keyword type . It can be used with primitive, union, tuple type also along with object type.
-    ```
-        type User = {
-            name: string;
-            age: number;
-        };
+```
+    interface User {
+        name: string;
+        age: number;
+    }
 
-    ```
+```
+**Type:** type is decleared by using keyword type . It can be used with primitive, union, tuple type also along with object type.
+
+```
+    type User = {
+        name: string;
+        age: number;
+    };
+
+```
 
 ### Extending:
 
 **Interface:** interface can extend another interface usign "extends" keyword, which can be helpful for increase reusability of code.
+
 ```
 interface Person {
     name: string;
@@ -32,9 +35,11 @@ interface Person {
 interface User extends Person {
     
 }
+
 ```
 
 **Type:** type doesnot support "extends" keyword directly like interface. But we can extend type using "&" operator.
+
 ```
 type Person = {
     name: string;
@@ -42,6 +47,7 @@ type Person = {
 type User = Person & {
     age: number;
 };
+
 ```
 
 
