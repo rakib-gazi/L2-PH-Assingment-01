@@ -24,48 +24,52 @@
 
 ### Extending:
 
-	**Interface:** interface can extend another interface usign "extends" keyword, which can be helpful for increase reusability of code.
-    ```
-    interface Person {
-        name: string;
-    }
-    interface User extends Person {
-        
-    }
-    ```
-
-	**Type:** type doesnot support "extends" keyword directly like interface. But we can extend type using "&" operator.
-    ```
-    type Person = {
-        name: string;
-    };
-    type User = Person & {
-        age: number;
-    };
-    ```
-
-
-###Merging:
-
-	**Interface:** if we decleare more interface with same name, typescript merged it automatically, which is very helpful for us.
-    ```
-    interface User {
-        name: string;
-    }
-    interface User {
-        age: number;
-    }
+**Interface:** interface can extend another interface usign "extends" keyword, which can be helpful for increase reusability of code.
+```
+interface Person {
+    name: string;
+}
+interface User extends Person {
     
-    //result: User { name: string; age: number }
-    ```
-	**Type:** in type we cannot merged between two type if we decleare type using same name. if we do it, Its throw error.
-    ```
-    type User = { name: string };
-    type User = { age: number }; // Error: Duplicate identifier 'User'
-    ````
+}
+```
+
+**Type:** type doesnot support "extends" keyword directly like interface. But we can extend type using "&" operator.
+```
+type Person = {
+    name: string;
+};
+type User = Person & {
+    age: number;
+};
+```
+
+
+### Merging:
+
+**Interface:** if we decleare more interface with same name, typescript merged it automatically, which is very helpful for us.
+
+```
+interface User {
+    name: string;
+}
+interface User {
+    age: number;
+}
+
+//result: User { name: string; age: number }
+```
+**Type:** in type we cannot merged between two type if we decleare type using same name. if we do it, Its throw error.
+```
+type User = { name: string };
+type User = { age: number }; // Error: Duplicate identifier 'User'
+
+````
 
 
 **Finally, we can say that interface used for decleare obeject type with supported merged feature, on the other hand type can be declere with primitive, object, tuple, etc data type.**
+
+
 
 
 
