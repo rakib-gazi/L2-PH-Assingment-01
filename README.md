@@ -32,6 +32,8 @@
 interface Person {
     name: string;
 }
+
+
 interface User extends Person {
     
 }
@@ -44,6 +46,8 @@ interface User extends Person {
 type Person = {
     name: string;
 };
+
+
 type User = Person & {
     age: number;
 };
@@ -59,6 +63,8 @@ type User = Person & {
 interface User {
     name: string;
 }
+
+
 interface User {
     age: number;
 }
@@ -68,6 +74,7 @@ interface User {
 **Type:** in type we cannot merged between two type if we decleare type using same name. if we do it, Its throw error.
 ```
 type User = { name: string };
+
 type User = { age: number }; // Error: Duplicate identifier 'User'
 
 ````
@@ -88,15 +95,16 @@ Its ensures type safety & commonly used with mapped types. Its also works with i
 ```
 
 interface Person {
-name: string;
-age: number;
-city: string;
+    name: string;
+    age: number;
+    city: string;
 }
 
 type PersonKeys = keyof Person; // "name" | "age" | "city"
 
+
 function getProperty(obj: Person, key: PersonKeys) {
-return obj[key];
+    return obj[key];
 }
 
 const person: Person = { name: "Alice", age: 30, city: "New York" };
